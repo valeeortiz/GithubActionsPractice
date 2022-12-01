@@ -19,6 +19,9 @@ on:
   pull_request:
     branch:
     - main
+  push:
+    branch:
+    - main
 ```
 
 ### Configures the job to run on the latest version of an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
@@ -29,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
 ```
 
-### Groups together all the steps that run in the check-bats-version job. Each item nested under this section is a separate action or shell script. The uses keyword specifies that this step will run v3 of the actions/checkout action. This is an action that checks out your repository onto the runner, allowing you to run scripts or other actions against your code . You should use the checkout action any time your workflow will run against the repository's code.
+### Each item nested under this section is a separate action or shell script. The uses keyword specifies that this step will run v3 of the actions/checkout action. This is an action that checks out your repository onto the runner, allowing you to run scripts or other actions against your code . You should use the checkout action any time your workflow will run against the repository's code.
 
 ``` yaml
     steps:
@@ -45,7 +48,7 @@ jobs:
 
 ``` yaml
     - name: Build with Maven
-      run: mvn -B package --file GithubActionsPractice/pom.xml
+      run: mvn -B package --file pom.xml
 ```
 
 ### The run keyword tells the job to execute a command on the runner. In this case, you are using mvn to install the file testing package.

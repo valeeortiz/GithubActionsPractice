@@ -25,7 +25,7 @@ public class CustomerService {
         return result;
     }
 
-    public String getPLZAddressCombinationIncludingHostValue(Customer customer, boolean updateExternalSystems) {
+    public String getPLZAddressCombinationIncludingHostValue() {
 
         hostService.expand(customer);
 

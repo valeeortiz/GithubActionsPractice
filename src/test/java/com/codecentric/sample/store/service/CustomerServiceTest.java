@@ -89,8 +89,7 @@ public class CustomerServiceTest {
         //
         // Then
         //
-        Mockito.verify(addressService, times(1)).updateExternalSystems(any(Customer.class));
-        assertThat(address, is("47891_224B Bakerstreet_TestHostValue"));
+        
     }
 }
 
